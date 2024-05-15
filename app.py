@@ -14,7 +14,7 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 app = Flask(__name__)
 loader = TextLoader("data.txt")
 document = loader.load()
-text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=500)
 docs = text_splitter.split_documents(document)
 embeddings = HuggingFaceEmbeddings()
 db = FAISS.from_documents(docs, embeddings)
