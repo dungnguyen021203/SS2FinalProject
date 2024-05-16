@@ -13,6 +13,9 @@ loader = TextLoader("data.txt")
 document = loader.load()
 
 
+# This is a testing environment
+
+
 # Preprocessing
 def wrap_text_preserve_newlines(text, width=110):
     lines = text.split('\n')
@@ -22,7 +25,7 @@ def wrap_text_preserve_newlines(text, width=110):
 
 
 # Text Splitting (Chunks)
-text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(chunk_size=1500, chunk_overlap=500)
 docs = text_splitter.split_documents(document)
 
 # Embedding
