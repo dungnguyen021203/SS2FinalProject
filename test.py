@@ -31,7 +31,6 @@ docs = text_splitter.split_documents(document)
 # Embedding
 embeddings = HuggingFaceEmbeddings()
 db = FAISS.from_documents(docs, embeddings)
-print(db)
 
 
 # Q-A
@@ -40,3 +39,5 @@ chain = load_qa_chain(llm, chain_type="stuff")
 
 queryText = "What is HCI"
 docsResult = db.similarity_search(queryText)
+answer = chain.run(input_documents=docsResult, question=queryText)
+print(answer)
