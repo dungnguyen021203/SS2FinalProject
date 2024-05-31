@@ -6,9 +6,11 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.llms import HuggingFaceHub
+from dotenv import load_dotenv
 
 import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+load_dotenv()
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACE_API")
 
 # Setup
 app = Flask(__name__)

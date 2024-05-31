@@ -25,18 +25,18 @@ def wrap_text_preserve_newlines(text, width=110):
 
 
 # Text Splitting (Chunks)
-text_splitter = CharacterTextSplitter(chunk_size=1500, chunk_overlap=500)
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 docs = text_splitter.split_documents(document)
 
 # Embedding
 embeddings = HuggingFaceEmbeddings()
 db = FAISS.from_documents(docs, embeddings)
+print(db)
 
 
 # Q-A
 llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.8, "max_length": 512})
 chain = load_qa_chain(llm, chain_type="stuff")
 
-queryText = "When does Lebron James born?"
+queryText = "What is HCI"
 docsResult = db.similarity_search(queryText)
-print(chain.run(input_documents=docsResult, question=queryText))
