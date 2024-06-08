@@ -1,4 +1,5 @@
 What is HCI: HCI, or Human-Computer Interaction, is a multidisciplinary field, focusing on the design of computer technology and, more specifically, the interaction between humans (users) and computers.
+Qu'est-ce que HCI: HCI, ou Human-Computer Interaction, est un domaine multidisciplinaire axé sur la conception de la technologie informatique et, plus précisément, sur l'interaction entre les humains (utilisateurs) et les ordinateurs.
 
 What is the main goal of HCI: The main goal of HCI is to create computer products and services that are easy to use, efficient, and satisfy users.
 
