@@ -7,7 +7,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain_community.llms import HuggingFaceHub
 from langchain_community.llms import HuggingFaceEndpoint
 import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 loader = TextLoader("data.txt")
 document = loader.load()

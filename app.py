@@ -20,7 +20,7 @@ text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 docs_final = text_splitter.split_documents(document)
 embeddings = HuggingFaceEmbeddings()
 db = FAISS.from_documents(docs_final, embeddings)
-llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.7, "max_length": 512})
+llm = HuggingFaceHub(repo_id="google/flan-t5-base", model_kwargs={"temperature": 0.7, "max_length": 512})
 chain = load_qa_chain(llm, chain_type="stuff")
 
 
